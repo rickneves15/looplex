@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import './globals.css'
 
-const boboto = Roboto({ subsets: ['cyrillic'], weight: ['400', '500', '700'] })
+import './globals.css'
+// import StyledComponentsRegistry from '@/lib/AntdRegistry'
+
+const roboto = Roboto({ subsets: ['cyrillic'], weight: ['400', '500', '700'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={boboto.className}>{children}</body>
+      <body className={roboto.className}>
+        {children}
+        {/* <StyledComponentsRegistry>{children}</StyledComponentsRegistry> */}
+      </body>
     </html>
   )
 }

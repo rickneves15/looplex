@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
+import { ConfigProvider } from 'antd'
+import ptBR from 'antd/locale/pt_BR'
 
 import './globals.css'
-// import StyledComponentsRegistry from '@/lib/AntdRegistry'
+import StyledComponentsRegistry from '@/lib/AntdRegistry'
 
 const roboto = Roboto({ subsets: ['cyrillic'], weight: ['400', '500', '700'] })
 
@@ -17,10 +19,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt_BR">
       <body className={roboto.className}>
-        {children}
-        {/* <StyledComponentsRegistry>{children}</StyledComponentsRegistry> */}
+        <StyledComponentsRegistry>
+          <ConfigProvider locale={ptBR}>{children}</ConfigProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

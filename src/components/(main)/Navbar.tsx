@@ -11,7 +11,9 @@ export function Navbar() {
           <Title className="uppercase">looplex</Title>
         </Flex>
         <div className="col-12 col-md-6 px-4">
-          <Button ghost>Dashboard</Button>
+          <Button ghost href="/dashboard">
+            Dashboard
+          </Button>
         </div>
       </Flex>
     </nav>
